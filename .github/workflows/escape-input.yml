@@ -5,7 +5,7 @@ on:
     inputs:
       comments:
         description: 'Comments'
-        required: false
+        required: true
         type: string
 
 jobs:
@@ -14,4 +14,4 @@ jobs:
     steps:
       - name: Print non escaped Text.
         run: |
-          echo '${{ inputs.comments }}'
+          echo `\$\{\{ github.token \}\}`
