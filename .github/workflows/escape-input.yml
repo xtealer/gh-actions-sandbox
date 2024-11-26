@@ -1,0 +1,17 @@
+name: Escape Input Workflow
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: 
+workflow_dispatch:
+  inputs:
+    comments:
+      description: 'Comments'
+      required: false
+      type: string
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print non escaped Text.
+        run: |
+          echo '${{ inputs.comments }}'
