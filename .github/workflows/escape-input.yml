@@ -11,9 +11,12 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Print NON Escaped Text.
+      - name: Print Non-Escaped Text
         run: |
-          echo '${{ github.token }}'
-      - name: Print Escaped Text.
+          echo "Non-escaped input:"
+          echo "${{ inputs.comments }}"
+        
+      - name: Print Escaped Text
         run: |
-          echo '::escapeContent::${{ github.token }}'
+          echo "Escaped input:"
+          echo "${{ inputs.comments }}" | jq -R '.'
