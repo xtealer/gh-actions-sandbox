@@ -19,4 +19,4 @@ jobs:
       - name: Print Escaped Text
         run: |
           echo "Escaped input:"
-          echo "${{ inputs.comments }}" | jq -R '.'
+          printf '%s\n' "${{ inputs.comments }}" | sed 's/["'\''`]/\\&/g'
