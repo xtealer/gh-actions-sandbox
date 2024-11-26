@@ -1,5 +1,4 @@
 name: Escape Input Workflow
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: 
   workflow_dispatch:
     inputs:
@@ -14,4 +13,4 @@ jobs:
     steps:
       - name: Print non escaped Text.
         run: |
-          echo `\$\{\{ github.token \}\}`
+          echo '${{ github.token }}'
