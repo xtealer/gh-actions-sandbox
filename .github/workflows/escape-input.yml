@@ -11,6 +11,9 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Print non escaped Text.
+      - name: Print NON Escaped Text.
+        run: |
+          echo '${{ github.token }}'
+      - name: Print Escaped Text.
         run: |
           echo '::escapeContent::${{ github.token }}'
