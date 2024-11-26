@@ -19,4 +19,4 @@ jobs:
       - name: Print Escaped Text
         run: |
           echo "Escaped input:"
-          printf '%s\n' "${{ inputs.comments }}" | sed 's/["'\''`]/\\&/g'
+          printf '%s\n' "${{ inputs.comments }}" | sed "s/[\"'\\`]/\\\\&/g"
